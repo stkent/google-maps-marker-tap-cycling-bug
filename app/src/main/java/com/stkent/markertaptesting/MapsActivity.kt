@@ -3,13 +3,13 @@ package com.stkent.markertaptesting
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory.*
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.libraries.maps.CameraUpdateFactory
+import com.google.android.libraries.maps.GoogleMap
+import com.google.android.libraries.maps.OnMapReadyCallback
+import com.google.android.libraries.maps.SupportMapFragment
+import com.google.android.libraries.maps.model.BitmapDescriptorFactory.*
+import com.google.android.libraries.maps.model.LatLng
+import com.google.android.libraries.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
 
@@ -33,7 +33,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         googleMap.addMarker(center, HUE_GREEN, "Green")
         googleMap.addMarker(center.neBy(-0.000004f), HUE_BLUE, "Blue")
 
-        // Exhibits bug
+        // Does not exhibit bug
         googleMap.setOnMarkerClickListener { marker ->
             Snackbar.make(rootView, "${marker.tag} marker tapped", LENGTH_SHORT).show()
 
@@ -47,7 +47,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //            true // Prevent default animation from occurring.
 //        }
 
-//        // Exhibits bug
+//        // Does not exhibit bug
 //        googleMap.setOnMarkerClickListener { marker ->
 //            Snackbar.make(rootView, "${marker.tag} marker tapped", LENGTH_SHORT).show()
 //
